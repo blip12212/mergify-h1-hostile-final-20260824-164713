@@ -1,0 +1,13 @@
+pull_request_rules:
+  - name: fresh hostile reviewed copy 20260824-164713
+    conditions:
+      - label = h1-hostile-20260824-164713
+      - base = main
+      - "#approved-reviews-by >= 1"
+    actions:
+      copy:
+        branches:
+          - release
+        body: |
+          Exact source commits consumed by Mergify:
+          {{ cherry_picked_commits }}
